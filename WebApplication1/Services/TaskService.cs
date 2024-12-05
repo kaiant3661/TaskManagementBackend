@@ -17,7 +17,7 @@ namespace WebApplication1.Services
         {
             // Fetch tasks where the user is either assigned or created the task
             var tasks = await _dbContext.Tasks
-                .Where(t => t.AssignedToUserId == userId || t.CreatedByUserId == userId)
+                .Where(t => t.AssignedToUserId == userId )
                 .ToListAsync();
 
             return tasks;
